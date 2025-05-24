@@ -48,6 +48,76 @@ style.textContent = `
         `;
 document.head.appendChild(style);
 
+const createFireflies = (count, isBackground = false) => {
+  const group = [];
+
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement('div');
+    el.classList.add('firefly');
+    el.classList.add(isBackground ? 'background-firefly' : 'foreground-firefly');
+    document.body.appendChild(el);
+
+    group.push({
+      el,
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      dx: (Math.random() - 0.5) * (isBackground ? 0.3 : 0.7),
+      dy: (Math.random() - 0.5) * (isBackground ? 0.3 : 0.7),
+      scale: isBackground
+        ? Math.random() * 0.3 + 0.3
+        : Math.random() * 0.5 + 0.7,
+      opacity: isBackground
+        ? Math.random() * 0.3 + 0.2
+        : Math.random() * 0.5 + 0.5,
+      speedFactor: isBackground ? 0.5 : 1
+    });
+  }
+
+  return group;
+};
+
+const backgroundFlies = createFireflies(10, true);
+const foregroundFlies = createFireflies(10, false);
+const fireflies = [...backgroundFlies, ...foregroundFlies];
+
+let scrollY = 0;
+window.addEventListener('scroll', () => {
+  scrollY = window.scrollY;
+});
+
+window.addEventListener('touchstart', (e) => {
+  const touchX = e.touches[0].clientX;
+  const touchY = e.touches[0].clientY;
+
+  fireflies.forEach(f => {
+    const dx = f.x - touchX;
+    const dy = f.y - touchY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < 150) {
+      f.dx += dx / dist * 0.5;
+      f.dy += dy / dist * 0.5;
+    }
+  });
+});
+
+function animate() {
+  fireflies.forEach(f => {
+    f.x += f.dx * f.speedFactor;
+    f.y += f.dy * f.speedFactor + scrollY * 0.0005;
+
+    // Rebote de bordes
+    if (f.x < 0 || f.x > window.innerWidth) f.dx *= -1;
+    if (f.y < 0 || f.y > window.innerHeight) f.dy *= -1;
+
+    f.el.style.transform = `translate(${f.x}px, ${f.y}px) scale(${f.scale})`;
+    f.el.style.opacity = `${f.opacity + Math.sin(Date.now() * 0.002 + f.x) * 0.2}`;
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
 function updateCountdown() {
   const targetDate = new Date("aug 30, 2025 19:00:00").getTime();
   const now = new Date().getTime();

@@ -40,19 +40,16 @@
 @keyframes pulseStar {
   0% {
     opacity: 0.85;
-    r: 3.5;
     filter: drop-shadow(0 0 8px #fff8);
   }
 
   60% {
     opacity: 1;
-    r: 4.2;
     filter: drop-shadow(0 0 14px #fff);
   }
 
   100% {
     opacity: 0.85;
-    r: 3.5;
     filter: drop-shadow(0 0 8px #fff8);
   }
 }
@@ -60,19 +57,16 @@
 @keyframes pulseStarSmall {
   0% {
     opacity: 0.6;
-    r: 1.1;
     filter: drop-shadow(0 0 4px #fff7);
   }
 
   60% {
     opacity: 0.85;
-    r: 1.7;
     filter: drop-shadow(0 0 8px #fff);
   }
 
   100% {
     opacity: 0.6;
-    r: 1.1;
     filter: drop-shadow(0 0 4px #fff7);
   }
 }
