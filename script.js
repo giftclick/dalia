@@ -48,34 +48,6 @@ style.textContent = `
         `;
 document.head.appendChild(style);
 
-const createFireflies = (count, isBackground = false) => {
-  const group = [];
-
-  for (let i = 0; i < count; i++) {
-    const el = document.createElement('div');
-    el.classList.add('firefly');
-    el.classList.add(isBackground ? 'background-firefly' : 'foreground-firefly');
-    document.body.appendChild(el);
-
-    group.push({
-      el,
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      dx: (Math.random() - 0.5) * (isBackground ? 0.3 : 0.7),
-      dy: (Math.random() - 0.5) * (isBackground ? 0.3 : 0.7),
-      scale: isBackground
-        ? Math.random() * 0.3 + 0.3
-        : Math.random() * 0.5 + 0.7,
-      opacity: isBackground
-        ? Math.random() * 0.3 + 0.2
-        : Math.random() * 0.5 + 0.5,
-      speedFactor: isBackground ? 0.5 : 1
-    });
-  }
-
-  return group;
-};
-
 function updateCountdown() {
   const targetDate = new Date("aug 30, 2025 19:00:00").getTime();
   const now = new Date().getTime();
