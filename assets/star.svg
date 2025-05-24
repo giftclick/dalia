@@ -1,0 +1,11 @@
+<svg width="12" height="12" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="16,2 20,12 31,12 22,19 25,30 16,23 7,30 10,19 1,12 12,12"
+        fill="url(#silverGradient)" stroke="#e0e0e0" stroke-width="1.2"/>
+    <defs>
+        <linearGradient id="silverGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#f8f8f8"/>
+            <stop offset="0.5" stop-color="#bfc1c6"/>
+            <stop offset="1" stop-color="#e0e0e0"/>
+        </linearGradient>
+    </defs>
+</svg>
