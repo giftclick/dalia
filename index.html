@@ -93,7 +93,7 @@
             .firefly {
                 position: fixed;
                 pointer-events: none;
-                z-index: 9999;
+                z-index: 10;
                 width: 15px;
                 height: 15px;
                 background-image: url("data:image/svg+xml,${starSVG}");
@@ -140,8 +140,8 @@
             return group;
         };
 
-        const backgroundFlies = createFireflies(10, true);
-        const foregroundFlies = createFireflies(10, false);
+        const backgroundFlies = createFireflies(5, true);
+        const foregroundFlies = createFireflies(5, false);
         const fireflies = [...backgroundFlies, ...foregroundFlies];
 
         let scrollY = 0;
@@ -266,11 +266,9 @@
                     height: 275px;
                     border-radius: 50%;
                     object-fit: cover;
-                    filter: drop-shadow(rgba(255, 255, 255, 0.6) 0px 0px 60px) drop-shadow(rgb(255, 233, 179) 0px 0px 120px) drop-shadow(rgba(255, 233, 179, 0.333) 40px 60px 80px);
                     position: relative;
-                    z-index: 99999;
-                    margin-left: 15px;
-                    --delay: 0s;
+                    z-index: 9;
+                    margin-left: 15px;;
                 }
 
                 .imagenluna2 {
@@ -282,7 +280,7 @@
                     border-radius: 50%;
                     overflow: hidden;
                     pointer-events: none;
-                    z-index: 99999;
+                    z-index: 9;
                 }
 
                 .imagenluna2 img {
