@@ -185,7 +185,7 @@
     <div id="content">
 
         <section class="section">
-            <h1 class="title" id="jireh" style="z-index: 999999;">Dalia</h1>
+            <h1 class="title" id="jireh" style="z-index: 9;">Dalia</h1>
             <p class="subtitle" id="jireh-sub"></p>
             <script>
                 // Utilidad para animar letras con trayectorias distintas
@@ -236,14 +236,11 @@
                     obs.observe(el);
                 }
 
-                // Título: "Dalia" (letras llegan de diferentes ángulos)
-                landingTextOnScroll('#jireh', 'Dalia', ['left', 'right', 'top', 'bottom'], 80, 0);
 
                 // Subtítulo: "¡Mis quinceanos!" (letras llegan de arriba y abajo alternando)
                 landingTextOnScroll('#jireh-sub', '¡Mis quinceaños!', ['top', 'bottom'], 45, 600);
             </script>
             <style>
-                #jireh span,
                 #jireh-sub span {
                     opacity: 0;
                     filter: blur(2px);
@@ -255,52 +252,52 @@
 
                     <!-- Imagen principal (Luna) -->
                     <img src="assets/1.png" alt="Luna" class="quote-image fra image-reveal" id="BW" style="
-display: block;
-  width: 325px;
-  height: 275px;
-  border-radius: 50%;
-  object-fit: cover;
-  filter: drop-shadow(rgba(255, 255, 255, 0.6) 0px 0px 60px) drop-shadow(rgb(255, 233, 179) 0px 0px 120px) drop-shadow(rgba(255, 233, 179, 0.333) 40px 60px 80px);
-  position: relative;
-  z-index: 99999;
-  margin-left: 15px;
-  --delay: 0s;
-    " />
+                        display: block;
+                        width: 325px;
+                        height: 275px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        filter: drop-shadow(rgba(255, 255, 255, 0.6) 0px 0px 60px) drop-shadow(rgb(255, 233, 179) 0px 0px 120px) drop-shadow(rgba(255, 233, 179, 0.333) 40px 60px 80px);
+                        position: relative;
+                        z-index: 99999;
+                        margin-left: 15px;
+                        --delay: 0s;
+                            " />
 
                     <!-- Imagen superpuesta (Cover) -->
                     <div style="
-position: absolute;
-  left: 47px;
-  top: 4px;
-  width: 264px;
-  height: 268px;
-  border-radius: 50%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 99999;
-    ">
+                        position: absolute;
+                        left: 47px;
+                        top: 4px;
+                        width: 264px;
+                        height: 268px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        pointer-events: none;
+                        z-index: 99999;
+                            ">
                         <img src="assets/cover.jpg" alt="Cover" style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.32;
-        border-radius: 50%;
-        display: block;
-      " />
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0.32;
+                        border-radius: 50%;
+                        display: block;
+                    " />
                     </div>
 
                     <!-- Halo luminoso -->
                     <div style="
-      position: absolute;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%);
-      width: 180px; height: 180px;
-      pointer-events: none;
-      border-radius: 50%;
-      background: radial-gradient(ellipse at 60% 60%, #fffbe9cc 0%, #ffe9b300 70%);
-      z-index: 1;
-      filter: blur(8px) opacity(0.5);
-    "></div>
+                    position: absolute;
+                    left: 50%; top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 180px; height: 180px;
+                    pointer-events: none;
+                    border-radius: 50%;
+                    background: radial-gradient(ellipse at 60% 60%, #fffbe9cc 0%, #ffe9b300 70%);
+                    z-index: 1;
+                    filter: blur(8px) opacity(0.5);
+                    "></div>
 
                 </div>
             </div>
