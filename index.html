@@ -103,12 +103,6 @@
                 filter: drop-shadow(0 0 6px #fff8) drop-shadow(0 0 2px #bfc1c6);
                 transition: opacity 0.2s;
             }
-            .background-firefly {
-                filter: drop-shadow(0 0 2px #fff8);
-            }
-            .foreground-firefly {
-                filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 2px #bfc1c6);
-            }
         `;
         document.head.appendChild(style);
 
@@ -207,8 +201,7 @@
                             default: transform = 'translateY(40px)';
                         }
                         span.style.transform = transform;
-                        span.style.transition = 'all 0.7s cubic-bezier(.6,1.5,.5,1), filter 0.7s cubic-bezier(.6,1.5,.5,1)';
-                        span.style.filter = 'blur(2px)';
+                        span.style.transition = 'all 0.7s cubic-bezier(.6,1.5,.5,1)';
 
                         element.appendChild(span);
 
@@ -243,7 +236,6 @@
             <style>
                 #jireh-sub span {
                     opacity: 0;
-                    filter: blur(2px);
                     will-change: transform, opacity, filter;
                 }
             </style>
@@ -252,11 +244,6 @@
 
                     <!-- Imagen principal (Luna) -->
                     <img src="assets/1.png" alt="Luna" class="imagenluna quote-image fra image-reveal" id="BW" />
-
-                    <!-- Imagen superpuesta (Cover) -->
-                    <div class="imagenluna2">
-                        <img src="assets/cover.jpg" alt="Cover" />
-                    </div>
                 </div>
             </div>
             <style>
@@ -271,28 +258,7 @@
                     margin-left: 15px;;
                 }
 
-                .imagenluna2 {
-                    position: absolute;
-                    left: 47px;
-                    top: 4px;
-                    width: 264px;
-                    height: 268px;
-                    border-radius: 50%;
-                    overflow: hidden;
-                    pointer-events: none;
-                    z-index: 9;
-                }
-
-                .imagenluna2 img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    opacity: 0.32;
-                    border-radius: 50%;
-                    display: block;
-                }
             </style>
-
             <p class="subtitle reveal-left">TU PRESENCIA ES ALTAMENTE APRECIADA EN ESTE MOMENTO TAN ESPECIAL.</p>
             <p class="subtitle reveal-left" style="margin-bottom: 0px;">30 de agosto, 2025.</p>
             <div class="countdown-constellation">
@@ -324,21 +290,6 @@
                         <circle class="pulse-star" style="animation-delay: 1.8s;" cx="320" cy="60" r="3.7" fill="#fff"
                             stroke="#bfc1c6" stroke-width="1.2" />
                     </g>
-                    <!-- Extra small stars for elegance -->
-                    <g>
-                        <circle class="pulse-star-small" style="animation-delay: 0.2s;" cx="45" cy="50" r="1.2"
-                            fill="#fff" opacity="0.7" />
-                        <circle class="pulse-star-small" style="animation-delay: 0.7s;" cx="85" cy="40" r="1.1"
-                            fill="#fff" opacity="0.6" />
-                        <circle class="pulse-star-small" style="animation-delay: 1.1s;" cx="140" cy="70" r="1.3"
-                            fill="#fff" opacity="0.7" />
-                        <circle class="pulse-star-small" style="animation-delay: 1.5s;" cx="200" cy="55" r="1.1"
-                            fill="#fff" opacity="0.6" />
-                        <circle class="pulse-star-small" style="animation-delay: 1.9s;" cx="250" cy="80" r="1.2"
-                            fill="#fff" opacity="0.7" />
-                        <circle class="pulse-star-small" style="animation-delay: 2.3s;" cx="300" cy="45" r="1.1"
-                            fill="#fff" opacity="0.6" />
-                    </g>
                 </svg>
                 <div class="countdown-content">
                     <p class="subtitle reveal-left" style="margin-bottom: 5px; margin-top: 35px;">Cuenta Regresiva</p>
@@ -350,19 +301,16 @@
                     stroke: #fff;
                     stroke-width: 2.6;
                     stroke-linecap: round;
-                    filter: drop-shadow(0 0 16px #fff);
                     opacity: 0.85;
                     stroke-dasharray: 12, 10;
                 }
 
                 .pulse-star {
-                    filter: drop-shadow(0 0 8px #fff8);
                     animation: pulseStar 1.8s infinite alternate;
                     transform-origin: center;
                 }
 
                 .pulse-star-small {
-                    filter: drop-shadow(0 0 4px #fff7);
                     animation: pulseStarSmall 2.2s infinite alternate;
                     transform-origin: center;
                 }
@@ -370,7 +318,6 @@
                 @keyframes pulseStar {
                     0% {
                         opacity: 0.85;
-                        r: 3.5;
                         filter: drop-shadow(0 0 8px #fff8);
                     }
 
@@ -382,7 +329,6 @@
 
                     100% {
                         opacity: 0.85;
-                        r: 3.5;
                         filter: drop-shadow(0 0 8px #fff8);
                     }
                 }
@@ -477,8 +423,7 @@
 
             <div class="timeline-zigzag-card">
                 <!-- Fondo SVG: Cruz del Sur -->
-                <svg class="cruz-del-sur-bg" viewBox="0 0 400 1200" preserveAspectRatio="xMidYMid slice"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg class="cruz-del-sur-bg" viewBox="0 0 400 1200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="200" cy="100" r="4" fill="#fff" opacity="0.5" />
                     <circle cx="100" cy="300" r="3.5" fill="#fff" opacity="0.5" />
                     <circle cx="300" cy="500" r="5" fill="#fff" opacity="0.5" />
@@ -606,10 +551,10 @@
                     max-width: 420px;
                     align-items: center;
                     border-radius: 210px;">
-            <img src="assets/xv.png" class="zigzag-image2"
-                style="width: 190px;
-  border: 2px solid #b5b5b5;
-  filter: drop-shadow(0 0 60px rgba(153, 153, 153, 0.6)) drop-shadow(0 0 120px #7b7b7b) drop-shadow(40px 60px 80px #f0aa0654);" alt="Recuerdo 3" />
+                <img src="assets/xv.png" class="zigzag-image2"
+                        style="width: 190px;
+                        border: 2px solid #b5b5b5;
+                        filter: drop-shadow(0 0 60px rgba(153, 153, 153, 0.6)) drop-shadow(0 0 120px #7b7b7b) drop-shadow(40px 60px 80px #f0aa0654);" alt="Recuerdo 3" />
         </div>
         <div class="card">
             <h1 class="title reveal">Mis 15 Años</h1>
@@ -788,7 +733,6 @@
             </div>
             <p class="text">Se reserva el color plateado, azul y sus diversas tonalidades para la quinceañera.</p>
         </div>
-        </section>
         <div class="subtitle reveal-left" style="text-align: center; margin-top: 20px;">
             ¡LOS ESPERO PARA CELEBRAR MIS quinceaños!
         </div>
