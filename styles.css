@@ -8,10 +8,234 @@
 }
 
 @font-face {
-  font-family: 'Snell Bold';
-  src: url('./SnellBT-Bold.otf') format('opentype');
+  font-family: "Snell Bold";
+  src: url("./SnellBT-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
+}
+
+/*constelaciones style*/
+
+.constellation-anim-segment {
+  stroke: #fff;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 16px #fff);
+  opacity: 0.85;
+  stroke-dasharray: 12, 10;
+}
+
+.pulse-star {
+  filter: drop-shadow(0 0 8px #fff8);
+  animation: pulseStar 1.8s infinite alternate;
+  transform-origin: center;
+}
+
+.pulse-star-small {
+  filter: drop-shadow(0 0 4px #fff7);
+  animation: pulseStarSmall 2.2s infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes pulseStar {
+  0% {
+    opacity: 0.85;
+    r: 3.5;
+    filter: drop-shadow(0 0 8px #fff8);
+  }
+
+  60% {
+    opacity: 1;
+    r: 4.2;
+    filter: drop-shadow(0 0 14px #fff);
+  }
+
+  100% {
+    opacity: 0.85;
+    r: 3.5;
+    filter: drop-shadow(0 0 8px #fff8);
+  }
+}
+
+@keyframes pulseStarSmall {
+  0% {
+    opacity: 0.6;
+    r: 1.1;
+    filter: drop-shadow(0 0 4px #fff7);
+  }
+
+  60% {
+    opacity: 0.85;
+    r: 1.7;
+    filter: drop-shadow(0 0 8px #fff);
+  }
+
+  100% {
+    opacity: 0.6;
+    r: 1.1;
+    filter: drop-shadow(0 0 4px #fff7);
+  }
+}
+
+.countdown-constellation {
+  position: relative;
+  margin: 28px auto 30px auto;
+  max-width: 100%;
+  min-width: 0;
+  width: 96vw;
+  background: linear-gradient(135deg, #1d2643 90%, #232c4e 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px 0 #0002;
+  overflow: visible;
+  padding: 0 10px 38px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 120px;
+}
+
+.constellation-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.countdown-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  margin-top: 103px;
+}
+
+.countdown-constellation .subtitle {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .countdown-constellation {
+    max-width: 99vw;
+    width: 99vw;
+    padding: 0 2vw 28px 2vw;
+    border-radius: 18px;
+    min-height: 100px;
+  }
+
+  .constellation-border {
+    min-height: 135px;
+    max-height: 110px;
+    height: 100px;
+  }
+
+  .countdown-content {
+    font-size: 1.1em;
+    margin-top: 85px;
+  }
+}
+
+/*time line*/
+
+.timeline-zigzag-card {
+  position: relative;
+  margin: 38px auto 18px auto;
+  max-width: 420px;
+  width: 99vw;
+  background: linear-gradient(135deg, #181b2e 80%, #232c4e 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px 0 #0003;
+  padding: 0;
+  height: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cruz-del-sur-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.zigzag-image {
+  position: absolute;
+  width: 180px;
+  height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px #0005, 0 0 0 3px #fff3;
+  z-index: 2;
+  background: #bab0b04a;
+}
+
+.zigzag-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #fff;
+  transition: box-shadow 0.3s;
+  z-index: 3;
+}
+
+.zigzag-image img:hover {
+  box-shadow: 0 4px 32px #fff7, 0 0 0 4px #bfc1c6;
+}
+
+@media (max-width: 600px) {
+  .timeline-zigzag-card {
+    max-width: 99vw;
+    width: 99vw;
+    border-radius: 16px;
+    min-height: 1200px;
+  }
+
+  .zigzag-image {
+    width: 130px;
+    height: 250px;
+    border-radius: 10px;
+  }
+
+  .zigzag-image img {
+    border-radius: 10px;
+  }
+}
+/*loader styles*/
+
+/* Ocultar el contenido principal al cargar */
+#content {
+  display: none;
+}
+
+/* Estilo del contenedor del loader */
+#loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #06080e;
+  /* Cambia el color si es necesario */
+  z-index: 9999;
+}
+
+.loader1 {
+  margin-top: -50px;
 }
 
 a[href^="tel"] {
@@ -106,7 +330,7 @@ body {
 
 /* Títulos */
 .title {
-  font-family: 'Snell Bold', "Herr Von Muellerhoff", cursive;
+  font-family: "Snell Bold", "Herr Von Muellerhoff", cursive;
   font-size: 64px;
   color: #d9d8d8;
   margin-bottom: 10px;
@@ -248,7 +472,6 @@ body {
   text-align: center;
   margin-bottom: 50px;
   flex-direction: column;
-  
 }
 
 .b2 {
